@@ -1,27 +1,45 @@
 package com.UTN;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Date;
 
-public class Avion {
+public class Avion implements Serializable {
     private int capacidadCombustible;
     private int costoPorKm;
     private int capacidadMaximaPasajeros;
     private int velocidadMaxima;
     private String tipoPropulsion;
-    private HashSet<Reserva> listaFechas;
+    private ArrayList<Reserva> listaFechas;
 
-    public Avion(){
+    Avion(){}
 
-    }
-
-    public Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion) {
+    Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion) {
         this.capacidadCombustible = capacidadCombustible;
         this.costoPorKm = costoPorKm;
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoPropulsion = tipoPropulsion;
-        listaFechas = new HashSet<>();
+        listaFechas = new ArrayList<>();
+    }
+
+    public void agregarReserva(Reserva reserva){
+        if(reserva != null){
+            listaFechas.add(reserva);
+        }
+    }
+
+    public boolean comprobarFechasPorAvion(Date fecha){
+        boolean flag = false;
+        if(fecha != null){
+            for(Reserva r: listaFechas){
+                if(fecha == r.getFechaReservada()){
+                    flag = true;
+                }
+            }
+        }
+        return flag;
     }
 
     public int getCapacidadCombustible() {
@@ -64,6 +82,13 @@ public class Avion {
         this.tipoPropulsion = tipoPropulsion;
     }
 
+    public ArrayList<Reserva> getListaFechas() {
+        return listaFechas;
+    }
+
+    public void setListaFechas(ArrayList<Reserva> listaFechas) {
+        this.listaFechas = listaFechas;
+    }
     @Override
     public String toString() {
         return "Avion [" +

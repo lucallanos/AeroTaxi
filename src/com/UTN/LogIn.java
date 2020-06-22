@@ -1,18 +1,21 @@
 package com.UTN;
-
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
+
 public class LogIn {
+
+    public LogIn(){}
 
     Scanner scan = new Scanner(System.in);
 
     //Recibimos la lista de usuarios registrados para poder comparar con el dni
     //que se ingresa por teclado, si coincide el usuario ya se encontraba registrado,
     //sino se tendrá que registrar
-    public boolean ingresar(int dni, ArrayList<Persona> listaCliente){
+    public boolean ingresar(int dni, ArrayList<Persona> listaClientes){
         boolean flag = false;
-        for(Persona p: listaCliente){
+        for(Persona p: listaClientes){
             if(p.getDni() == dni){
                 flag = true;
             }
@@ -29,18 +32,17 @@ public class LogIn {
         return flag;
     }
 
-    public Persona registrarse(){
-        Persona persona = null;
+    public Cliente registrarse(Cliente cliente){
         System.out.println("-Ingrese su nombre: ");
-        persona.setNombre(scan.nextLine());
+        cliente.setNombre(scan.next());
         System.out.println("\n-Ingrese su apellido: ");
-        persona.setApellido(scan.nextLine());
+        cliente.setApellido(scan.next());
         System.out.println("\n-Ingrese su DNI:");
-        persona.setDni(scan.nextInt());
+        cliente.setDni(scan.nextInt());
         System.out.println("\n-Ingrese su edad: ");
-        persona.setEdad(scan.nextInt());
+        cliente.setEdad(scan.nextInt());
 
-        return persona;
+        return cliente;
     }
 }
 

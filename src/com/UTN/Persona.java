@@ -1,6 +1,6 @@
 package com.UTN;
 
-public abstract class Persona {
+public abstract class Persona{
     private String nombre;
     private String apellido;
     private int dni;
@@ -51,6 +51,11 @@ public abstract class Persona {
 
     @Override
     public String toString() {
-        return "Persona:\n" + "Nombre: " +nombre+ ", Apellido: " +apellido+ ", D.N.I: " +dni+ ", Edad: " +edad;
+        return "Persona: " +
+                "[ Nombre: " + nombre +
+                "|| Apellido: " + apellido +
+                "|| Dni: " + dni +
+                "|| Edad: " + edad +
+                " ]";
     }
 }
