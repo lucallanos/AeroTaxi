@@ -2,7 +2,7 @@ package com.UTN;
 
 import java.io.Serializable;
 
-public class Silver extends Avion implements Serializable {
+public class Silver extends Avion {
     private boolean catering;
 
     public Silver(){

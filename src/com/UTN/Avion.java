@@ -1,16 +1,17 @@
 package com.UTN;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Date;
 
-public class Avion implements Serializable {
+public class Avion {
     private int capacidadCombustible;
     private int costoPorKm;
     private int capacidadMaximaPasajeros;
     private int velocidadMaxima;
     private String tipoPropulsion;
-    private HashSet<Reserva> listaFechas;
+    private ArrayList<Reserva> listaFechas;
 
     Avion(){}
 
@@ -20,7 +21,7 @@ public class Avion implements Serializable {
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoPropulsion = tipoPropulsion;
-        listaFechas = new HashSet<Reserva>();
+        listaFechas = new ArrayList<Reserva>();
     }
 
     public void agregarReserva(Reserva reserva){

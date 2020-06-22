@@ -1,9 +1,7 @@
 package com.UTN;
 
 
-import java.io.Serializable;
-
-public class Gold extends Avion implements Serializable {
+public class Gold extends Avion {
     private boolean catering;
     private boolean wifi;
 

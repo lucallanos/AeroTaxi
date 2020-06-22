@@ -13,7 +13,7 @@ public class LogIn {
     //Recibimos la lista de usuarios registrados para poder comparar con el dni
     //que se ingresa por teclado, si coincide el usuario ya se encontraba registrado,
     //sino se tendrá que registrar
-    public boolean ingresar(int dni, HashSet<Persona> listaClientes){
+    public boolean ingresar(int dni, ArrayList<Persona> listaClientes){
         boolean flag = true;
         for(Persona p: listaClientes){
             if(p.getDni() == dni){

@@ -1,28 +1,29 @@
 package com.UTN;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 
-public class AeroTaxi implements Serializable {
+public class AeroTaxi {
     private ArrayList<Avion> listaAviones;
     //private ArrayList<Reserva> listaReservas;
-    private HashSet<Persona> listaClientes;
+    private ArrayList<Persona> listaClientes;
 
     public AeroTaxi(){
         listaAviones = new ArrayList<Avion>();
         //listaReservas = new ArrayList<Reserva>();
-        listaClientes = new HashSet<Persona>();
+        listaClientes = new ArrayList<Persona>();
     }
 
     public boolean agregarAvion(Avion avion){
         boolean flag = false;
         if(avion != null){
             listaAviones.add(avion);
-            ManejoArchivos.escribir("Aviones.json", avion);
             flag = true;
         }
         return flag;
+    }
+
+    public void cargarArrayList(){
+        ManejoArchivo.arrayListToJSON("C:\\Users\\Intel\\IdeaProjects\\AeroTaxi\\file\\aviones.json", getListaAviones());
     }
 
     /*
@@ -53,7 +54,7 @@ public class AeroTaxi implements Serializable {
         return listaReservas;
     }*/
 
-    public HashSet<Persona> getListaClientes() {
+    public ArrayList<Persona> getListaClientes() {
         return listaClientes;
     }
 }

@@ -3,7 +3,7 @@ package com.UTN;
 import java.io.Serializable;
 import java.util.HashSet;
 
-public class Bronze extends Avion implements Serializable {
+public class Bronze extends Avion {
 
     public Bronze(){
     }

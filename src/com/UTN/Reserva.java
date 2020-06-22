@@ -102,3 +102,5 @@ public class Reserva implements Serializable {
         return "Reserva:\n" + "Fecha: " +fechaReservada+ ", Origen: " +origen+ ", Destino: " +destino+ ", Cant acompañantes: " +cantidadAcompañantes;
     }
 }
+
+
