@@ -11,7 +11,7 @@ public class Avion implements Serializable {
     private int capacidadMaximaPasajeros;
     private int velocidadMaxima;
     private String tipoPropulsion;
-    private ArrayList<Reserva> listaFechas;
+
 
     Avion(){}
 
@@ -21,26 +21,9 @@ public class Avion implements Serializable {
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoPropulsion = tipoPropulsion;
-        listaFechas = new ArrayList<>();
+
     }
 
-    public void agregarReserva(Reserva reserva){
-        if(reserva != null){
-            listaFechas.add(reserva);
-        }
-    }
-
-    public boolean comprobarFechasPorAvion(Date fecha){
-        boolean flag = false;
-        if(fecha != null){
-            for(Reserva r: listaFechas){
-                if(fecha == r.getFechaReservada()){
-                    flag = true;
-                }
-            }
-        }
-        return flag;
-    }
 
     public int getCapacidadCombustible() {
         return capacidadCombustible;
@@ -82,13 +65,6 @@ public class Avion implements Serializable {
         this.tipoPropulsion = tipoPropulsion;
     }
 
-    public ArrayList<Reserva> getListaFechas() {
-        return listaFechas;
-    }
-
-    public void setListaFechas(ArrayList<Reserva> listaFechas) {
-        this.listaFechas = listaFechas;
-    }
     @Override
     public String toString() {
         return "Avion [" +

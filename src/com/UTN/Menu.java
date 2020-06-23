@@ -46,6 +46,10 @@ public class Menu {
                         menuAdmin();
                     }
                     break;
+                case 3:
+                    System.out.println("Solicitudes necesarias para el Registro: ");
+                        registroToLista();
+                    break;
             }
         }while (opcion != 0);
     }
@@ -109,5 +113,11 @@ public class Menu {
 
     public void UsuariosLista(){
         admin.verListaUsuarios(listas.getListaClientes());
+    }
+
+    public void registroToLista(){
+        boolean flag = false;
+        Cliente cliente = new Cliente();
+        flag = listas.agregarCliente(ingreso.registro(cliente));
     }
 }

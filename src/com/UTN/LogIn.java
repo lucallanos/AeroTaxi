@@ -32,7 +32,7 @@ public class LogIn {
         return flag;
     }
 
-    public Cliente registrarse(Cliente cliente){
+    public Cliente registro(Cliente cliente){
         System.out.println("-Ingrese su nombre: ");
         cliente.setNombre(scan.next());
         System.out.println("\n-Ingrese su apellido: ");
