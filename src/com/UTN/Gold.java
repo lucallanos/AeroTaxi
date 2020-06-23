@@ -1,17 +1,20 @@
 package com.UTN;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("gold")
 
 public class Gold extends Avion {
     private boolean catering;
     private boolean wifi;
 
-    public Gold(){
-    }
+    public Gold(){}
 
-    public Gold(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, boolean catering, boolean wifi) {
-        super(capacidadCombustible, costoPorKm, capacidadMaximaPasajeros, velocidadMaxima, tipoPropulsion);
+    public Gold(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion, boolean catering, boolean wifi) {
+        super(capacidadCombustible, costoPorKm, capacidadMaximaPasajeros, velocidadMaxima, tipoPropulsion, idAvion);
         this.catering = catering;
         this.wifi = wifi;
+
     }
 
     public boolean getCatering() {

@@ -1,47 +1,35 @@
 package com.UTN;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeName")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Gold.class),
+        @JsonSubTypes.Type(value = Silver.class),
+        @JsonSubTypes.Type(value = Bronze.class)})
 public class Avion {
+    //Atributos
     private int capacidadCombustible;
     private int costoPorKm;
     private int capacidadMaximaPasajeros;
     private int velocidadMaxima;
     private String tipoPropulsion;
-    private ArrayList<Reserva> listaFechas;
+    private String idAvion;
 
+    //Constructores
     Avion(){}
 
-    Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion) {
+    Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion) {
         this.capacidadCombustible = capacidadCombustible;
         this.costoPorKm = costoPorKm;
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoPropulsion = tipoPropulsion;
-        listaFechas = new ArrayList<Reserva>();
+        this.idAvion = idAvion;
     }
 
-    public void agregarReserva(Reserva reserva){
-        if(reserva != null){
-            listaFechas.add(reserva);
-        }
-    }
-
-    public boolean comprobarFechasPorAvion(Date fecha){
-        boolean flag = false;
-        if(fecha != null){
-            for(Reserva r: listaFechas){
-                if(fecha == r.getFechaReservada()){
-                    flag = true;
-                }
-            }
-        }
-        return flag;
-    }
-
+    //Getters y setters
     public int getCapacidadCombustible() {
         return capacidadCombustible;
     }
@@ -80,6 +68,14 @@ public class Avion {
 
     public void setTipoPropulsion(String tipoPropulsion) {
         this.tipoPropulsion = tipoPropulsion;
+    }
+
+    public String getIdAvion() {
+        return idAvion;
+    }
+
+    public void setIdAvion(String idAvion) {
+        this.idAvion = idAvion;
     }
 
     @Override
