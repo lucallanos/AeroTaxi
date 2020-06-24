@@ -1,5 +1,5 @@
 package com.UTN;
-/*
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Gold.class),
         @JsonSubTypes.Type(value = Silver.class),
-        @JsonSubTypes.Type(value = Bronze.class)})*/
-
+        @JsonSubTypes.Type(value = Bronze.class)})
 public class Avion {
+    //Atributos
     private int capacidadCombustible;
     private int costoPorKm;
     private int capacidadMaximaPasajeros;
@@ -18,11 +18,9 @@ public class Avion {
     private String idAvion;
 
     //Constructores
-    public Avion() {
+    Avion(){}
 
-    }
-
-    public Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion) {
+    Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion) {
         this.capacidadCombustible = capacidadCombustible;
         this.costoPorKm = costoPorKm;
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
@@ -31,6 +29,7 @@ public class Avion {
         this.idAvion = idAvion;
     }
 
+    //Getters y setters
     public int getCapacidadCombustible() {
         return capacidadCombustible;
     }
@@ -81,6 +80,6 @@ public class Avion {
 
     @Override
     public String toString() {
-        return "\nAvion:\n" + "Capacidad combustible: " + capacidadCombustible + ", Costo por km: " + costoPorKm + ", Capacidad maxima de pasajeros: " + capacidadMaximaPasajeros + ", Velocidad maxima: " + velocidadMaxima;
+        return "\nAvion:\n" + "Capacidad combustible: " +capacidadCombustible+ ", Costo por km: " +costoPorKm+ ", Capacidad maxima de pasajeros: " +capacidadMaximaPasajeros+ ", Velocidad maxima: " +velocidadMaxima;
     }
 }

@@ -1,18 +1,19 @@
 package com.UTN;
 
-import java.util.HashSet;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
-public class Bronze extends Avion{
+@JsonTypeName("bronze")
 
-    public Bronze(){
-    }
+public class Bronze extends Avion {
 
-    public Bronze(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion) {
-        super(capacidadCombustible, costoPorKm, capacidadMaximaPasajeros, velocidadMaxima, tipoPropulsion);
+    public Bronze(){}
+
+    public Bronze(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion) {
+        super(capacidadCombustible, costoPorKm, capacidadMaximaPasajeros, velocidadMaxima, tipoPropulsion, idAvion);
     }
 
     @Override
     public String toString() {
-        return "Bronze: " + super.toString();
+        return super.toString();
     }
 }
