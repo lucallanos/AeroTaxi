@@ -26,16 +26,17 @@ public class Menu {
         //listas.cargarListasConJSON();
         int opcion = 0;
         do{
-            System.out.println("1- Ingresar");
-            System.out.println("2- Ingresar como admin");
-            System.out.println("3- Registrarse");
-            System.out.println("0- Salir");
-            System.out.println("\nIngrese una opcion: ");
+            System.out.println("\n||=========MENU PRINCIPAL==========||");
+            System.out.println("[1]- Ingresar");
+            System.out.println("[2]- Ingresar como admin");
+            System.out.println("[3]- Registrarse");
+            System.out.println("[0]- Volver");
+            System.out.println("||=================================||");
             opcion = scan.nextInt();
 
             switch (opcion){
                 case 1:
-                    System.out.println("Ingrese su DNI: ");
+                    System.out.println("||Ingrese su DNI||");
                     int dni = scan.nextInt();
                     if(ingresar(dni)){
                         menuCliente();
@@ -45,20 +46,20 @@ public class Menu {
                     if(ingresarAdmin()){
                         menuAdmin();
                     }else{
-                        System.out.println("Contrasenia incorrecta, volvera al menu inicial");
+                        System.out.println("||Contrasenia incorrecta, volvera al menu inicial||");
                     }
                     break;
                 case 3:
                     if(guardarCliente()){
-                        System.out.println("Usuario registrado con exito");
+                        System.out.println("||Usuario registrado con exito||");
                     }else{
-                        System.out.println("No se pudo registrar su usuario, vuelva a intentarlo");
+                        System.out.println("No se pudo registrar su usuario, vuelva a intentarlo...");
                     }
                     break;
                 case 0:
                     break;
                 default:
-                    System.out.println("Opción incorrecta, vuelva a ingresarla");
+                    System.out.println("Opción incorrecta, vuelva a ingresarla...");
             }
         }while (opcion != 0);
     }
@@ -66,19 +67,24 @@ public class Menu {
     public void menuCliente(){
         int opcion = 0;
         do{
-            System.out.println("1- Hacer una reserva");
-            System.out.println("2- Dar de baja una reserva");
-            System.out.println("3- Ver historial de viajes");
-            System.out.println("0- Volver");
+            System.out.println("\n||============USUARIO===========||");
+            System.out.println("[1]- Hacer una reserva");
+            System.out.println("[2]- Dar de baja una reserva");
+            System.out.println("[3]- Ver historial de viajes");
+            System.out.println("[0]- Volver");
+            System.out.println("||=================================||");
             opcion = scan.nextInt();
 
             switch (opcion){
                 case 1:
+                    System.out.println("||Reservas disponibles||");
                     System.out.println(reservar());
                     break;
                 case 2:
+                    System.out.println("||Elija la reserva a eliminar||");
                     break;
                 case 3:
+                    System.out.println("||Historial||");
                     break;
                 case 0:
                     break;

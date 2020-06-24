@@ -3,7 +3,7 @@ package com.UTN;
 import java.util.ArrayList;
 
 public class Cliente extends Persona{
-    private ArrayList<Reserva> historialReservas;
+    //private ArrayList<Reserva> historialReservas;
 
     Cliente(){
         super();
