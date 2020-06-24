@@ -1,7 +1,13 @@
 package com.UTN;
+/*
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "typeName")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Gold.class),
+        @JsonSubTypes.Type(value = Silver.class),
+        @JsonSubTypes.Type(value = Bronze.class)})*/
 
 public class Avion {
     private int capacidadCombustible;
@@ -9,19 +15,20 @@ public class Avion {
     private int capacidadMaximaPasajeros;
     private int velocidadMaxima;
     private String tipoPropulsion;
-    private HashSet<Reserva> listaFechas;
+    private String idAvion;
 
-    public Avion(){
+    //Constructores
+    public Avion() {
 
     }
 
-    public Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion) {
+    public Avion(int capacidadCombustible, int costoPorKm, int capacidadMaximaPasajeros, int velocidadMaxima, String tipoPropulsion, String idAvion) {
         this.capacidadCombustible = capacidadCombustible;
         this.costoPorKm = costoPorKm;
         this.capacidadMaximaPasajeros = capacidadMaximaPasajeros;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoPropulsion = tipoPropulsion;
-        listaFechas = new HashSet<>();
+        this.idAvion = idAvion;
     }
 
     public int getCapacidadCombustible() {
@@ -64,13 +71,16 @@ public class Avion {
         this.tipoPropulsion = tipoPropulsion;
     }
 
+    public String getIdAvion() {
+        return idAvion;
+    }
+
+    public void setIdAvion(String idAvion) {
+        this.idAvion = idAvion;
+    }
+
     @Override
     public String toString() {
-        return "Avion [" +
-                " CapacidadCombustible: " + capacidadCombustible +
-                "|| Costo por Km: " + costoPorKm +
-                "|| Capacidad Maxima Pasajeros: " + capacidadMaximaPasajeros +
-                "|| VelocidadMaxima: " + velocidadMaxima +
-                "|| TipoPropulsion: " + tipoPropulsion ;
+        return "\nAvion:\n" + "Capacidad combustible: " + capacidadCombustible + ", Costo por km: " + costoPorKm + ", Capacidad maxima de pasajeros: " + capacidadMaximaPasajeros + ", Velocidad maxima: " + velocidadMaxima;
     }
 }
